@@ -20,6 +20,7 @@ class PhotoController extends Controller {
         //     ]
         //   }
         // }
+        console.log('for commit')
         this.ctx.body = queryResult
       } else {
         this.ctx.status = 200
