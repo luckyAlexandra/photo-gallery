@@ -1,9 +1,7 @@
 'use strict'
 const Service = require('egg').Service
-var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:27017/';
-
-
+// var MongoClient = require('mongodb').MongoClient;
+// var url = 'mongodb://localhost:27017/photos';
 
 class photoService extends Service {
   constructor (ctx) {
@@ -11,24 +9,18 @@ class photoService extends Service {
   }
   async queryPhotoList () {
     const {ctx} = this
-    let final
-    try {
-      MongoClient.connect(url, (err, db) => {
-        if (err) throw err
-        var _dbo = db.db('photos')
-        var _collection = _dbo.collection('photoList')
-        _collection.find().toArray((err, result) => {
-          if (err) throw err
-          console.log(result)
-          final = result
-          db.close()
-          return { success: true, data: final }
-        })
-      })
-    } catch (err) {
-      console.log(err)
-      return { success: false }
-    }
+    // console.log('model', ctx.model.Photo)
+    // ctx.model.Photo.create({
+    //   'photoUrl': 'www.wuage.com'
+    // }, () => {
+    //   console.log('新增数据：')
+    // })
+    let res =  await ctx.model.Photo.find()
+    console.log('res', res)
+    return res
+  }
+  async upload () {
+    
   }
 }
 

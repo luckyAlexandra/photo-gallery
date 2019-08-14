@@ -11,3 +11,13 @@ exports.cors = {
   enable: true,
   package: 'egg-cors',
 };
+
+exports.mongoose = {
+  enable: true,
+  package: 'egg-mongoose',
+}
+
+exports.assets = {
+  enable: true,
+  package: 'egg-view-assets',
+}

@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.input-wr aper{
+.input-wraper{
   display block
   input {
     display block
