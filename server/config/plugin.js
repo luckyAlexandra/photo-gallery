@@ -17,7 +17,7 @@ exports.mongoose = {
   package: 'egg-mongoose',
 }
 
-exports.assets = {
-  enable: true,
-  package: 'egg-view-assets',
-}
+// exports.assets = {
+//   enable: true,
+//   package: 'egg-view-assets',
+// }
